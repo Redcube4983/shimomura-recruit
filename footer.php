@@ -51,8 +51,102 @@
 </script>
  <?php if( is_page(array('contact','error'))): ?>
   <script src="<?php echo get_template_directory_uri(); ?>/js/yubinbango.js" charset="UTF-8"></script>
+  <script src="<?php echo get_template_directory_uri(); ?>/common/js/form.js" charset="UTF-8"></script>
   <script>
   document.querySelector('.mw_wp_form_input form').classList.add('h-adr');
+  jQuery(function($) {
+    // フォーム全体を監視
+    $('.mw_wp_form form').on('submit', function(e) {
+        // フォームオブジェクトを定義
+        var $form = $(this);
+        
+        // 入力値を取得
+        var mail = $form.find('input[name="mail"]').val();
+        var local = $form.find('input[name="mail_local"]').val();
+        var domain = $form.find('input[name="mail_domain"]').val();
+        
+        // 両方の入力がある場合のみ比較
+        if (mail && local && domain) {
+            var fullConfirm = local.trim() + "@" + domain.trim();
+            
+            if (mail.trim() !== fullConfirm) {
+                // 1. 送信を強制停止
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                
+                // 2. エラーメッセージを表示
+                if ($('#js-mail-error').length === 0) {
+                    $form.find('input[name="mail"]').after('<div id="js-mail-error" class="error">「メールアドレス」が一致しません。正しく入力してください。</div>');
+                } else {
+                    $('#js-mail-error').show();
+                }
+
+                // --- 追加：入力欄までスクロール ---
+                $('html, body').animate({
+                    scrollTop: $form.find('input[name="mail"]').offset().top - 100
+                }, 300);
+                
+                // 3. ボタンの無効化を解除
+                var $submit = $form.find('input[type="submit"]');
+                setTimeout(function(){
+                    $submit.prop('disabled', false);
+                    // MW WP Form独自の処理でクラスが変わる場合の対策
+                    $submit.removeClass('disabled'); 
+                }, 100);
+
+                return false;
+            }
+        }
+        
+        // 一致している場合はエラーを消して送信を許可
+        $('#js-mail-error').hide();
+      });
+      $('.mw_wp_form form').on('submit', function(e) {
+        // フォームオブジェクトを定義
+        var $form = $(this);
+        
+        // 入力値を取得
+        var mail2 = $form.find('input[name="mail2"]').val();
+        var local2 = $form.find('input[name="mail2_local"]').val();
+        var domain2 = $form.find('input[name="mail2_domain"]').val();
+        
+        // 両方の入力がある場合のみ比較
+        if (mail2 && local2 && domain2) {
+            var fullConfirm = local2.trim() + "@" + domain2.trim();
+            
+            if (mail2.trim() !== fullConfirm) {
+                // 1. 送信を強制停止
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                
+                // 2. エラーメッセージを表示
+                if ($('#js-mail-error').length === 0) {
+                    $form.find('input[name="mail2"]').after('<div id="js-mail-error" class="error">「メールアドレス」が一致しません。正しく入力してください。</div>');
+                } else {
+                    $('#js-mail-error').show();
+                }
+
+                // --- 追加：入力欄までスクロール ---
+                $('html, body').animate({
+                    scrollTop: $form.find('input[name="mail2"]').offset().top - 100
+                }, 300);
+                
+                // 3. ボタンの無効化を解除
+                var $submit = $form.find('input[type="submit"]');
+                setTimeout(function(){
+                    $submit.prop('disabled', false);
+                    // MW WP Form独自の処理でクラスが変わる場合の対策
+                    $submit.removeClass('disabled'); 
+                }, 100);
+
+                return false;
+            }
+        }
+        
+        // 一致している場合はエラーを消して送信を許可
+        $('#js-mail-error').hide();
+      });
+    });
   </script>
 <?php endif; ?>
 <?php wp_footer(); ?>

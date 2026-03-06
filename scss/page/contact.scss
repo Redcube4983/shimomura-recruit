@@ -259,7 +259,7 @@ main {
 							gap: 10px;
 							font-size: 1.6rem;
 							input{
-								width: 90px;
+								width: 120px;
 								&:last-of-type{
 									width: 120px;
 								}
@@ -360,6 +360,12 @@ main {
 	}
 }
 .mw_wp_form{
+	.mail-confirm {
+		display: grid;
+		grid-template-columns: 1fr 2rem 1fr;
+		gap: 10px;
+		align-items: center;
+	}
 	.contact__read{
 		&__input{
 			display: block;
