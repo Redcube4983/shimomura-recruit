@@ -1,0 +1,559 @@
+@use "../global" as *;
+@use "../object" as *;
+
+
+
+  // base font
+  $font02: "Roboto", sans-serif;
+  $font03: "Roboto Condensed", sans-serif;
+  
+  // color 
+  $w100: #fff;
+  $k100: #000;
+  $k02: #4d4d4d;
+  $k03: #251e1c;
+  $b01: #4275d4;
+  $b02: #dfecf7;
+  $b03: #61afd1;
+  $b04: #619cd1;
+
+  
+
+
+html {
+    font-size: 62.5%;
+}
+
+
+main {
+    text-align: left;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+.mdblock {
+  max-width: 100%;
+  margin: auto;
+}
+
+// environment
+
+.environment {
+
+
+
+  .firstview__videowrap {
+    background: url(../images/environment__main.png) no-repeat center center;
+      background-size: cover;
+      border-radius: 30px;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+        }
+    }
+  
+
+
+
+
+  .wrapcontent__massegetitle {
+    width: 90%;
+    max-width: 1280px;
+    margin: 0 auto 10%;
+    font-size: 2rem;
+    color: #4275d4;
+    margin-bottom: 110px;
+    text-align: center;
+    line-height: 2em;
+    @include mq(md) {
+        font-size: 3.2rem;
+        line-height: 1.7em;
+    }
+  }
+
+  &.wrapcontent {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    margin-bottom: 20%;
+    &:last-child {
+      margin-bottom: 0%;
+    }
+    @include mq(lg) {
+      margin-bottom: 10%;
+    }
+
+  }
+  &.contentwrap {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+  }
+  .wrapcontent__contenttitle {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 3.5px;
+    line-height: 2em;
+  }
+
+  &__flex {
+    @include mq(lg) {
+      @include baseflex();
+    }
+    &__item01 {
+      width: 100%;
+      aspect-ratio: auto;
+      margin-bottom: 5%;
+      padding: 5%;
+      background: $b01;
+      border-radius: 30px;
+      color: #fff;
+      margin-bottom: 50px;
+      @include mq(md) {
+        aspect-ratio: 4 / 3;
+      }
+      @include mq(lg) {
+        width: 31.5%;
+        aspect-ratio: 2.4 / 3;
+        padding: 30px;
+        background: $b01;
+        border-radius: 30px;
+        color: $w100;
+        margin-bottom: 50px;
+      }
+      @include mq(xl) {
+        aspect-ratio: 3.95 / 3;
+      }
+      &:nth-child(3) {
+        .environment__flex__item01-material .catch {
+          margin-bottom: 15px;
+        }
+      }
+      &__material {
+        font-size: 2.4rem;
+        text-align: center;
+        .catch {
+          font-size: 2.8rem;
+          font-weight: bold;
+          margin-bottom: 30px;
+          letter-spacing: 3px;
+        }
+        .info {
+          line-height: 2em;
+          margin-bottom: 10px;
+          .caption {
+            font-size: 2.4rem;
+            display: block;
+          }
+          .nom {
+            font-size: 6rem;
+            font-family: $font03;
+          }
+          .day {
+            font-size: 4rem;
+          }
+        }
+        .text {
+          line-height: 1.5em;
+          font-size: 1.8rem;
+        }
+      }
+    }
+  }
+
+
+  &__infobox {
+    background: #ff85af;
+    padding: 30px;
+    border-radius: 30px;
+    width: 100%;
+    color: $w100;
+    .mdblock {
+      max-width: 600px;
+      margin: auto;
+    }
+  }
+
+  &__infobox {
+
+    margin-bottom: 80px;
+
+    .mdblock {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .wrapcontent__contenttitle {
+      span {
+        font-size: 1.7rem;
+        display: block;
+        letter-spacing: 0;
+      }
+    }
+    .environment__flex {
+      align-items: start;
+      .environment__flex__text {
+        display: block;
+        width: 100%;
+        max-width: 550px;
+        font-size: 1.8rem;
+        line-height: 1.7em;
+        margin-bottom: 5%;
+        @include mq(md) {
+          font-size: 2.4rem;
+        }
+        span {
+          font-size: 1.6rem;
+        }
+      }
+      .environment__flex__photo {
+        @include baseflex;
+        .environment__flex__item {
+           width: 48%;
+        }
+      }
+    }
+
+  }
+
+
+
+  &#content02 {
+
+    .environment__flex {
+      flex-wrap: wrap;
+    }
+
+    .item02 {
+      padding: 5%;
+      aspect-ratio: auto;
+      margin-bottom: 5%;
+      width: 100%;
+      background: $b03;
+      border-radius: 30px;
+      color: $w100;
+      text-align: center;
+      line-height: 1.5em;
+      font-size: 1.4rem;
+      @include mq(md) {
+        font-size: 1.8rem;
+      }
+      @include mq(lg) {
+        width: 48%;
+        aspect-ratio: 3 / 1;
+        padding: 30px;
+        margin-bottom: 50px;
+      }
+      &.w100 {
+        background: $w100;
+      }
+      &:nth-child(3) {
+        padding: 0;
+      }
+      h4 {
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin-bottom: 5%;
+        @include mq(sm) {
+          font-size: 2.4rem;
+          margin-bottom: 40px;
+        }
+      }
+    }
+
+    .information {
+      border: 1px solid $b03;
+      padding: 5%;
+      font-size: 1.4rem;
+      line-height: 2em;
+      @include mq(lg) {
+        padding: 30px;
+      }
+      h4 {
+        font-size: 2.1rem;
+        letter-spacing: 3px;
+        color: $b03;
+        margin-bottom: 40px;
+      }
+    }
+
+  }
+
+
+  &#content03 {
+
+
+    .environment__flex {
+
+      align-items: start;
+
+      .environment__flex__textarea {
+        width: 100%;
+        @include mq(lg) {
+          width: 50%;
+        }
+      }
+      .environment__flex__photo {
+        width: 100%;
+        text-align: center;
+        @include mq(lg) {
+          width: 48%;
+        }
+      }
+      .environment__flex__textarea__item {
+        width: 100%;
+        aspect-ratio: 5 / 1;
+        padding: 40px;
+        background: $b04;
+        border-radius: 30px;
+        color: #fff;
+        margin-bottom: 30px;
+        text-align: center;
+        line-height: 1.5em;
+        font-size: 1.8rem;
+        h4 {
+          font-weight: bold;
+          font-size: 2.8rem;
+          margin-bottom: 25px;
+        }
+      }
+
+    }
+
+
+  }
+
+
+
+  &#content04 {
+
+    .environment__flex {
+      align-items: start;
+      @include mq( lg) {
+        align-items: revert;
+        .environment__flex__two {
+          margin-bottom: 0%;
+        }
+        .one {
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .environment__flex__two {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 5%;
+      @include mq(lg) {
+        width: 23.5%;
+        display: block;
+      }
+      .environment__flex__two__item {
+        background: $b04;
+        color: $w100;
+        width: 48%;
+        padding: 4%;
+        border-radius: 10px;
+        font-size: 1.4rem;
+        h4 {
+          font-size: 2.1rem;
+          margin-bottom: 30px;
+          font-weight: bold;
+        }
+        .subtitle {
+          font-size: 1.6rem;
+          margin-bottom: 20px;
+          font-weight: bold;
+          letter-spacing: 5px;
+        }
+        @include mq(lg) {
+          font-size: 2.1rem;
+          width: 100%;
+          padding: 60px 40px;
+          margin-bottom: 30px;
+          border-radius: 30px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          h4 {
+            font-size: 3.2rem;
+            margin-bottom: 30px;
+            font-weight: bold;
+          }
+          .subtitle {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+            letter-spacing: 5px;
+          }
+        }
+      }
+    }
+
+    .one {
+      background: $b04;
+      color: $w100;
+      margin-bottom: 30px;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 1.6rem;
+      line-height: 1.5em;
+      padding: 40px;
+      @include mq(md) {
+        width: 100%;
+        border-radius: 30px;
+        font-size: 1.6rem;
+      }
+      .subtitle {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+        letter-spacing: 5px;
+      }
+      h4 {
+        font-size: 2.1rem;
+        margin-bottom: 5%;
+        font-weight: bold;
+      }
+      @include mq(lg) {
+        width: 74%;
+        h4 {
+          font-size: 3.2rem;
+          margin-bottom: 50px;
+          font-weight: bold;
+        }
+        .subtitle {
+          font-size: 2.4rem;
+        }
+      }
+
+      .environment__flexwrap {
+        @include mq(md) {
+          @include baseflex();
+          justify-content: left;
+          line-height: 1.7em;
+          align-items: start;
+  
+        }
+        .environment__flex {
+          .wrap {
+            @include mq(md) {
+              margin-right: 75px;
+            }
+          }
+        }
+        
+        .environment__flex__two__item {
+          width: 100%;
+          background: $b04;
+          color: $w100;
+          margin-bottom: 30px;
+          border-radius: 30px;
+          font-size: 1.4rem;
+          &:last-child {
+          @include mq(md) {
+              margin-bottom: 0;
+            }
+          }
+          .subtitle {
+            font-size: 1.6rem;
+            margin-bottom: 5%;
+            font-weight: bold;
+            letter-spacing: 5px;
+          }
+          @include mq(lg) {
+            font-size: 1.8rem;
+            .subtitle {
+              font-size: 2.4rem;
+              margin-bottom: 20px;
+              margin-bottom: 0;
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+
+
+  .flextablearea {
+    align-items: revert;
+    &__item {
+      width: 100%;
+      margin-bottom: 5%;
+      @include mq(lg) {
+        width: 48%;
+      }
+    }
+    &__section {
+      display: block;
+      width: 100%;
+      padding: 7%;
+      border-radius: 30px;
+      background: #61bda3;
+      color: $w100;
+      margin-bottom: 5%;
+      h4 {
+        font-size: 2.1rem;
+        margin-bottom: 25px;
+        font-weight: bold;
+        letter-spacing: 5px;
+      }
+      p {
+        font-size: 1.4rem;
+        line-height: 1.5em;
+        margin-bottom: 35px;
+        &.oneline {
+          @include mq(lg) {
+            margin-bottom: 59.5px;
+          }
+        }
+      }
+      @include mq(sm) {
+        h4 {
+          font-size: 2.4rem;
+        }
+        p {
+          font-size: 1.6rem;
+        }
+      }
+      &__flex {
+        @include baseflex;
+        img {
+          width: 48%;
+        }
+      }
+      @include mq(lg) {
+        width: 48%;
+        padding: 40px;
+        margin-bottom: 0;
+        h4 {
+          font-size: 2.8rem;
+        }
+      }
+    }
+  }
+  .table01 {
+    margin-top: 50px;
+    margin-bottom: 45px;
+    max-width: 100%;
+  }
+
+
+
+}
+

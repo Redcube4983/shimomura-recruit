@@ -1,0 +1,344 @@
+@use "../global" as *;
+@use "../object" as *;
+
+
+
+
+
+
+.mdblock {
+    display: block;
+    @include mq(xl) {
+        display: none;
+    }
+}
+
+.lgblock {
+    display: none;
+    @include mq(lg) {
+        display: block;
+    }
+}
+
+.xlblock {
+    display: none;
+    @include mq(xl) {
+        display: block;
+    }
+}
+
+.morebtn {
+    font-family: "Roboto Condensed", sans-serif;
+    padding: 20px;
+    font-size: 1.8rem;
+    text-align: center;
+    display: block;
+    width: 240px;
+    background: $w100;
+    color: $b01;
+    border-radius: 9999px;
+    border: 1px solid $w100;
+    font-weight: bold;
+    transition: .3s;
+    position: relative;
+    &:after {
+        position: absolute;
+        @include patblr;
+        left: auto;
+        top: 33%;
+        right: 5%;
+        content: "＞";
+        margin-right: 10px;
+        transform: scalex(0.6);
+        display: inline-block;
+    }
+    &:hover {
+      background: $b01;
+      color: $w100;
+    }
+}
+
+
+
+
+
+
+.topabout {
+    padding: 20% 0;
+    margin-bottom: 15%;
+    position: relative;
+    
+    @include mq(md) {
+        padding: 100px 0;
+        margin: 320px 0 15% auto;
+    }
+    &::after {
+        background: #dfecf7;
+        height: 100%;
+        width: 85%;
+        max-width: 1100px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        content: "";
+        display: block;
+        z-index: -3;
+        border-radius: 60px 0 0 60px;
+        @include mq(lg) {
+            max-width: 100%;
+            border-radius: 60px 0 0 60px;
+        }
+    }
+    .topabout__textatea__photo {
+        width: 85%;
+        margin-left: 5%;
+        margin-bottom: 5%;
+        @include mq(lg) {
+            position: absolute;
+            top: -160px;
+            left: 0;
+            z-index: -1;
+            width: auto;
+        }
+    }
+    .topabout__textatea {
+        width: 95%;
+        margin: auto 0 auto auto;
+        padding: 10% 10% 10% 10%;
+        border-radius: 30px 0 0 30px;
+        background: #61a0d5;
+        color: $w100;
+        @include mq(lg) {
+            max-width: 60%;
+            padding: 85px 0 85px 100px;
+        }
+        .topabout__textatea__title {
+            color: $w100;
+            text-align: left;
+            span {
+                color: $w100;
+            }
+        }
+        p {
+            font-size: 1.4rem;
+            text-align: left;
+            margin-bottom: 10%;
+            @include mq(md) {
+                font-size: 1.6rem;
+                br.mdblock {
+                    display: none;
+                }
+            }
+        }
+        .morebtn {
+            color: #61a0d5;
+            &:hover {
+                color: $w100;
+                background: #61a0d5;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+.topenviroment {
+    padding: 15% 5%;
+    margin-bottom: 15%;
+    background: #e1e4ed;
+
+    @include mq(md) {
+        padding: 100px 5%;
+    }
+
+    .topenviroment__textatea__photo {
+        width: 100%;
+        margin-bottom: 5%;
+        @include mq(lg) {
+            position: relative;
+            z-index: 9;
+        }
+    }
+    .topenviroment__textatea {
+        position: relative;
+        background: #5a689d;
+        max-width: 1100px;
+        margin: auto 0 auto auto;
+        padding: 10%;
+        border-radius: 30px;
+        // border-radius: 30px 0 0 30px;
+        color: $w100;
+        @include mq(md) {
+            padding: 10% 15%;
+        }
+        @include mq(lg) {
+            margin: auto;
+            padding: 90px 75px;
+        }
+        .topenviroment__textatea__title {
+            color: $w100;
+            text-align: left;
+            span {
+                color: $w100;
+                margin-bottom: 2%;
+            }
+        }
+        p {
+            font-size: 1.4rem;
+            text-align: left;
+            margin-bottom: 10%;
+            @include mq(md) {
+                font-size: 1.6rem;
+                br.mdblock {
+                    display: none;
+                }
+            }
+        }
+        .morebtn {
+            color: #5a689d;
+            &:hover {
+                color: $w100;
+                background: #5a689d;
+            }
+        }
+    }
+    
+
+    @include mq(lg) {
+        margin-bottom: 30%;
+        .topenviroment__textatea {
+            margin: auto;
+            padding: 90px 75px;
+            position: absolute;
+            width: 100%;
+            bottom: -45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            p {
+                margin: 0;
+            }
+            .topenviroment__flex {
+                display: flex;
+                justify-content: space-between;
+                align-items: end;
+            }
+        }
+    }
+
+    @include mq(xl) {
+        .topenviroment__textatea {
+            bottom: -52.5%;
+        }
+    }
+}
+
+
+
+
+
+.topourwork {
+    padding: 20% 0;
+    margin-bottom: 15%;
+    position: relative;
+    img {
+        width: 100%;
+        height: auto;
+    }
+    @include mq(md) {
+        padding: 100px 0;
+        margin: auto 0 15% 0;
+    }
+    @include mq(lg) {
+        margin-bottom: 0%;
+    }
+
+    &::after {
+        background: #d7e2f5;
+        height: 100%;
+        width: 85%;
+        max-width: 1100px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        z-index: -3;
+        border-radius: 0 60px 60px 0;
+        @include mq(lg) {
+            width: 80%;
+            max-width: 100%;
+            border-radius: 0 60px 60px 0;
+            padding: 85px 0 85px 100px;
+        }
+    }
+    .topourwork__textatea__photo {
+        width: 85%;
+        margin: 0 5% 0 auto;
+        margin-bottom: 5%;
+        @include mq(lg) {
+            position: absolute;
+            top: -160px;
+            right: 0;
+            z-index: -1;
+            width: auto;
+        }
+    }
+    .topourwork__textatea {
+        width: 95%;
+        margin: auto auto auto 0;
+        padding: 5% 10% 10% 10%;
+        border-radius: 0 30px 30px 0;
+        background: #4275d4;
+        color: $w100;
+        @include mq(lg) {
+            max-width: 60%;
+        }
+        .topourwork__textatea__title {
+            color: $w100;
+            text-align: left;
+            span {
+                color: $w100;
+            }
+        }
+        p {
+            font-size: 1.4rem;
+            text-align: left;
+            margin-bottom: 10%;
+            @include mq(md) {
+                font-size: 1.6rem;
+                br.mdblock {
+                    display: none;
+                }
+            }
+        }
+        .morebtn {
+            color: #4275d4;
+            &:hover {
+                color: $w100;
+            }
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

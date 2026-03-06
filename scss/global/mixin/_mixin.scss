@@ -1,0 +1,129 @@
+@use "../setting/color" as *;
+@use "../setting/breakpoint" as *;
+
+// メディアクエリー -------------------------------------------------------------------
+@mixin mq($mediaquery: md) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+
+@mixin mq-min($width) {
+  @media only screen and (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin mq-max($width) {
+  @media only screen and (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+// position -------------------------------------------------------------------
+@mixin absolute($top: auto, $right: auto, $bottom: auto, $left: auto) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// font -------------------------------------------------------------------
+@mixin font($color: false, $family: false, $style: false, $size: false, $weight: false, $line-height: false, $letter-spacing: false) {
+  @if $color {
+    color: $color;
+  }
+
+  @if $family {
+    font-family: $family;
+  }
+
+  @if $style {
+    font-style: $style;
+  }
+
+  @if $size {
+    font-size: $size;
+  }
+
+  @if $weight {
+    font-weight: $weight;
+  }
+
+  @if $line-height {
+    line-height: $line-height;
+  }
+
+  @if $letter-spacing {
+    letter-spacing: $letter-spacing;
+  }
+}
+
+// Z-index -------------------------------------------------------------------
+@mixin z-map($z-map) {
+  $before-index: -1;
+  @each $name, $value in $z-map {
+    $result-z: null;
+
+    @if $value == auto {
+      $result-z: $before-index + 1;
+    } @else {
+      $result-z: $value;
+    }
+
+    $before-index: $result-z;
+    #{$name}: $result-z;
+  }
+}
+
+// z-index の指定
+// z-index: var(--header); // -> z-index: 9999;
+
+
+
+
+/*******************************
+		BASE CODE
+*******************************/
+
+
+// mixin
+
+@mixin bigcontent01 {
+  width: 100%;
+  margin: auto;
+}
+
+@mixin bigcontent02 {
+  width: 90%;
+  margin: auto;
+}
+
+@mixin baseflex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@mixin patblr {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+} 
+
+
+
+// base font
+$font02: "Roboto", sans-serif;
+$font03: "Roboto Condensed", sans-serif;
+
+// color 
+$w100: #fff;
+$k100: #000;
+$k02: #4d4d4d;
+$k03: #251e1c;
+$b01: #4275d4;
+$b02: #dfecf7;

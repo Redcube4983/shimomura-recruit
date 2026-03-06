@@ -1,0 +1,132 @@
+@use 'sass:math';
+@use "../global" as *;
+/*******************************
+			footer
+*******************************/
+
+
+
+.contactzone {
+    padding: 100px 0 110px 0;
+  }
+  
+  
+
+
+.l-footer {
+    a {
+        display: block;
+    }
+    .l-footer__wrapcontent {
+        width: 100%;
+        text-align: center;
+        background: #4d4d4d;
+        color: $w100;
+        @include mq(xl) {
+            padding: 75px 0 90px 0;
+        }
+        .l-footer__wrapcontent__title {
+            line-height: 1em;
+            a {
+                padding: 15px 0;
+                margin-bottom: 0px;
+                border-bottom: 1px solid $w100;
+                @include mq(xl) {
+                    padding: 0;
+                    border-bottom: none;
+                    margin-bottom: 60px;
+                }
+                .l-footer__wrapcontent__title__img {
+                    width: 45%;
+                    max-width: 45%;
+                    @include mq(xl) {
+                        width: 60%;
+                        max-width: 240px;
+                    }
+                }
+            }
+        }
+        .l-footer__wrapcontent__flex {
+            @include mq(xl) {
+                @include baseflex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 50px;
+            }
+            .l-footer__wrapcontent__flex__item {
+                width: 100%;
+                margin: auto;
+                line-height: 1em;
+                @include mq(xl) {
+                    margin: 0 23px;
+                    width: auto;
+                }
+                a {
+                    padding: 15px;
+                    margin-bottom: 0px;
+                    border-bottom: 1px solid $w100;
+                    display: block;
+                    text-align: left;
+                    color: $w100;
+                    font-size: 1.8rem;
+                    @include mq(xl) {
+                        border-bottom: none;
+                        font-size: 1.6rem;
+                        padding: 0;
+                    }
+                    &:before {
+                        content: "＞";
+                        margin-right: 10px;
+                        transform: scalex(0.6);
+                        display: inline-block;
+                        @include mq(xl) {
+                        display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .l-footer__youtubebox {
+        .l-footer__youtubebox__link {
+            padding: 15px;
+            margin-bottom: 0px;
+            width: 100%;
+            display: block;
+            text-align: left;
+            border-radius: 20px;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.8rem;
+            line-height: 1em;
+            @include mq(xl) {
+                padding: 27px 0;
+                border-radius: 20px;
+                color: #fff;
+                font-weight: bold;
+                font-size: 1.8rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .l-footer__youtubebox__link__img {
+                display: inline-block;
+                margin-right: 5px;
+                width: 33px;
+                img {
+                    vertical-align:top;
+                }
+            }
+        }
+
+    }
+    .copylight {
+        padding: 50px 0 50px 0;
+        text-align: center;
+        font-size: 1.2rem;
+        line-height: 1em;
+    }
+}
+
+
+

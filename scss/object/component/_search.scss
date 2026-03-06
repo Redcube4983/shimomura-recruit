@@ -1,0 +1,42 @@
+@use "../../global" as *;
+.search-input-wrap {
+    display: block;
+    text-align: center;
+    margin: 0 auto 40px;
+    #searchform {
+        width: auto;
+        position: relative;
+        max-width: 320px;
+        margin: 0 auto;
+        input {
+            border: 1px solid #666666;
+            height: 50px;
+            width: 320px;
+            font-size: 1.6rem;
+            padding-left: 8px;
+            background-color: #fff;
+            padding-right: 40px;
+          }
+        input[type="submit"] {
+            background: url(/common/images/icon-search.png);
+            background-repeat: no-repeat;
+            position: absolute;
+            top: 0;
+            width: 24px;
+            border: none;
+            height: 24px;
+            bottom: 0;
+            margin: auto 0;
+            right: 10px;
+            background-size: contain;
+            padding: 5px;
+        }
+    }
+    @include mq(md) {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        background-color: #004080;
+        padding: 0 0 60px;
+    }
+}

@@ -1,0 +1,27 @@
+.mw_wp_form{
+	.contact__read{
+		&__input{
+            display: none;
+		}
+		&__error{
+			display: block;
+		}
+        &__confirm{
+            display: none;
+        }
+	}
+}
+.error-block {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  gap: 10px;
+}
+.mw_wp_form .error { 
+	font-size: 1.6rem;
+	color: #B70000;
+	display: block;
+	margin-top: 10px;
+	background-color: #ffeced;
+	padding: 10px;
+}

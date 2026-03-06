@@ -1,0 +1,44 @@
+.mw_wp_form{
+	.contact__read{
+		&__input{
+            display: none;
+		}
+		&__error{
+			display: none;
+		}
+        &__confirm{
+            display: block;
+        }
+	}
+}
+.contact__formarea__list dd.select{
+    gap: 10px;
+}
+.contact__formarea__list dd .list__block01--name li{
+    width: auto;
+    min-width: auto;
+     span {
+        width: auto;
+        display: none;
+    }
+}
+.contact__formarea__list dd.information span.title {
+  display: none;
+}
+.contact__formarea__list.confirm{
+    display: none;
+}
+.contact__formarea__list dd {
+  line-height: 1.6;
+}
+@media screen and (min-width: 768px) {
+  .contact .c-btn.-medium {
+       max-width: 800px;
+    }
+}
+.error-block {
+  display: flex;
+  width: 100%;
+  flex-flow: column;
+  gap: 10px;
+}

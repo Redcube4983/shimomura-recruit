@@ -1,0 +1,144 @@
+@use "../global" as *;
+@use "../object" as *;
+
+
+
+
+
+html {
+    font-size: 62.5%;
+}
+
+
+main {
+    text-align: left;
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+
+
+.qa {
+
+  .firstview__videowrap {
+    background: url(../images/qa__main.png) no-repeat center center;
+      background-size: cover;
+      border-radius: 30px;
+      &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 30px;
+        }
+    }
+  
+
+
+  &__list {
+    width: 90%;
+    max-width: 1280px;
+    margin: auto;
+    border-bottom: 1px solid #b1b1b1;
+    &__item {
+      margin-bottom: 50px;
+      &__title {
+        width: 100%;
+        background: $b01;
+        color: $w100;
+        padding: 5% 3%;
+        border-radius: 5px;
+        font-size: 1.8rem;
+        position: relative;
+        cursor: pointer;
+        @include mq(lg) {
+          padding: 20px;
+          font-size: 2.4rem;
+        }
+        &:after {
+          content: "＋";
+          font-family: bold;
+          position: absolute;
+          right: 20px;
+          font-size: 3.6rem;
+          top: 25%;
+          -webkit-text-stroke: 2px #FFF;
+          text-stroke: 2px #FFF;
+        }
+        &.open {
+          &:after {
+            content: "−";
+            font-family: bold;
+            position: absolute;
+            right: 20px;
+            font-size: 3.6rem;
+            -webkit-text-stroke: 2px #FFF;
+            text-stroke: 2px #FFF;
+            top: 50%;
+            /* left: 50%; */
+            transform: translate(-35%, -65%);
+            -webkit-transform: translate(-35%, -65%);
+            -ms-transform: translate(-35%, -65%);
+          }
+        }
+      }
+      &__text {
+        margin: auto;
+        font-size: 1.4rem;
+        line-height: 1.7em;
+        margin-top: 40px;
+        display: none;
+        p {
+          font-size: 1.4rem;
+        }
+        @include mq(lg) {
+          font-size: 2.1rem;
+          padding: 0 20px;
+          p {
+            font-size: 2.1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@keyframes clickon {
+  0% {
+    margin-top: 0px;
+    opacity: 0;
+    height: 0%;
+  }
+
+  100% {
+    margin-top: 40px;
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+
+@keyframes clickoff {
+
+  0% {
+    margin-top: 40px;
+    opacity: 1;
+    height: 100%;
+  }
+
+  100% {
+    margin-top: 0px;
+    opacity: 0;
+    height: 0%;
+  }
+}
+
+
+
