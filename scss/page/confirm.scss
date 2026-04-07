@@ -14,6 +14,10 @@
 .contact__formarea__list dd.select{
     gap: 10px;
 }
+.contact__formarea__list dd .list__block01--name{
+    flex-flow: row nowrap;
+    gap: 2em;
+}
 .contact__formarea__list dd .list__block01--name li{
     width: auto;
     min-width: auto;
@@ -31,6 +35,13 @@
 .contact__formarea__list dd {
   line-height: 1.6;
 }
+.contact__formarea__list dd.information li {
+    flex-flow: row;
+    @media screen and (min-width: 768px) {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
 @media screen and (min-width: 768px) {
   .contact .c-btn.-medium {
        max-width: 800px;
@@ -44,4 +55,16 @@
   width: 100%;
   flex-flow: column;
   gap: 10px;
+}
+.contact__formarea__list dt span.required {
+    display: none;
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
+}
+.contact__formarea__list dt span.nonespan {
+    display: none;
+    @media screen and (min-width: 1024px) {
+        display: none;
+    }
 }

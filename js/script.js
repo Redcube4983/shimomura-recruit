@@ -148,8 +148,8 @@ $(document).ready(function() {
 
 
   
-$(function(){
-	$('.popup-iframe').magnificPopup({
+jQuery(function(){
+	jQuery('.popup-iframe').magnificPopup({
 	  type: 'iframe',
 	  disableOn: 500, //ウィンドウ幅が500px以下だったらモーダル表示させずにリンク先へ遷移
 	  mainClass: 'mfp-fade',
